@@ -3,9 +3,12 @@ import { Routes, Route } from 'react-router-dom'
 import About from './components/About'
 import Home from './components/Home'
 import NavBar from './components/NavBar'
-import logo from './logo.svg'
-import logojs from './logojs.svg'
-import logobs from './logobs.svg'
+import logo from './logos/logo.svg'
+import logojs from './logos/logojs.svg'
+import logobs from './logos/logobs.svg'
+import logots from './logos/logots.svg'
+import logoos from './logos/logoos.svg'
+import logong from './logos/logong.svg'
 import './App.css'
 //Imports
 
@@ -50,6 +53,7 @@ function App() {
         {/* Nav And Header*/}
         <NavBar />
         <header className="app-header">
+          {/* Logos */}
           <div className="row">
           <div className="col-4">
               <img
@@ -70,6 +74,29 @@ function App() {
                 src={logobs}
                 className="bs-logo"
                 alt="logobs"
+              />
+            </div>
+          </div>
+          <div className="row">
+          <div className="col-4">
+              <img
+                src={logots}
+                className="ts-logo"
+                alt="logots"
+              />
+            </div>
+            <div className="col-4">
+              <img
+                src={logoos}
+                className="os-logo"
+                alt="logoos"
+              />
+            </div>
+            <div className="col-4">
+              <img
+                src={logong}
+                className="ng-logo"
+                alt="logong"
               />
             </div>
           </div>

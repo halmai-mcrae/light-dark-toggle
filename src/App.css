@@ -14,7 +14,13 @@
 }
 
 .app-logo, .js-logo, .bs-logo {
-  height: 22.5vmin;
+  height: 20vmin;
+}
+
+.ts-logo, .ng-logo, .os-logo {
+  height: 17vmin;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Light mode styles */
