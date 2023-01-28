@@ -1,4 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import {
+  Routes,
+  Route,
+  Link,
+} from 'react-router-dom'
+import About from './components/About'
+import Home from './components/Home'
 import logo from './logo.svg'
 import './App.css'
 
@@ -47,9 +54,11 @@ function App() {
             className="App-logo"
             alt="logo"
           />
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
           <button
             type="button"
-            class="btn btn-outline-secondary"
+            className="btn btn-outline-secondary"
             onClick={darkMode.toggleTheme}
           >
             Toggle Mode
@@ -64,6 +73,18 @@ function App() {
           Learn React
         </a> */}
         </header>
+        <div>
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            ></Route>
+            <Route
+              path="/about"
+              element={<About />}
+            />
+          </Routes>
+        </div>
       </div>
     </ThemeContext.Provider>
   )
