@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import {
-  Routes,
-  Route,
-  Link,
-} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import About from './components/About'
 import Home from './components/Home'
 import logo from './logo.svg'
 import './App.css'
+import NavBar from './components/NavBar'
 
 const ThemeContext = React.createContext({
   theme: 'light',
@@ -48,14 +45,13 @@ function App() {
             : 'light-mode'
         }`}
       >
+        <NavBar />
         <header className="App-header">
           <img
             src={logo}
             className="App-logo"
             alt="logo"
           />
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
           <button
             type="button"
             className="btn btn-outline-secondary"

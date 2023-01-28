@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: calc(10px + 2vmin);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: auto;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  backdrop-filter: saturate(100%) blur(20px);
+  
+}
+
+
+

@@ -1,40 +1,34 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './NavBar.css'
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
+const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-brand">
-        <NavLink className="navbar-item" to="/">
-          My Website
-        </NavLink>
-        <div
-          className={`navbar-burger burger ${isOpen ? 'is-active' : ''}`}
-          onClick={handleToggle}
-        >
-          <span />
-          <span />
-          <span />
-        </div>
-      </div>
-      <div className={`navbar-menu ${isOpen ? 'is-active' : ''}`}>
-        <div className="navbar-start">
-          <NavLink className="navbar-item" to="/about">
+      <div className="btn-group" role="group" aria-label="Basic example">
+      <Link to="/"> <button
+            type="button"
+            className="btn btn-outline-secondary"
+            style = {{margin: '10px'}}
+          >
+            Home
+          </button></Link>
+      <Link to="/about">
+      <button
+            type="button"
+            className="btn btn-outline-secondary"
+            style = {{margin: '10px'}}
+          >
             About
-          </NavLink>
-          <NavLink className="navbar-item" to="/contact">
-            Contact
-          </NavLink>
+          </button>
+      </Link>
+          <span />
+          <span />
+          <span />
         </div>
-      </div>
     </nav>
   );
 };
 
-export default Navbar;
+export default NavBar;
