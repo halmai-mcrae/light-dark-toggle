@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { SunFill, MoonStarsFill } from 'react-bootstrap-icons'
 import About from './components/About'
 import Home from './components/Home'
 import NavBar from './components/NavBar'
@@ -104,9 +105,9 @@ function App() {
             type="button"
             className="btn btn-outline-secondary"
             onClick={darkMode.toggleTheme}
-          >
-            Toggle Mode
+          >{darkMode.theme === 'light' ? <MoonStarsFill size={25}/> : <SunFill  size={28}/>}
           </button>
+          
         </header>
 
         {/* Routes */}
