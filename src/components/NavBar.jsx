@@ -44,7 +44,8 @@ const NavBar = () => {
             style = {{margin: '10px'}}
           >
             Home
-          </button></Link>
+          </button>
+          </Link>
       <Link to="/about">
       <button
             type="button"
@@ -52,6 +53,15 @@ const NavBar = () => {
             style = {{margin: '10px'}}
           >
             About
+          </button>
+      </Link>
+      <Link to="/guestbook">
+      <button
+            type="button"
+            className="btn btn-outline-secondary"
+            style = {{margin: '10px'}}
+          >
+            Guestbook
           </button>
       </Link>
           <span />

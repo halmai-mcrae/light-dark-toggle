@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { SunFill, MoonStarsFill } from 'react-bootstrap-icons'
+import GuestBook from './components/GuestBook'
 import About from './components/About'
 import Home from './components/Home'
 import NavBar from './components/NavBar'
@@ -117,6 +118,10 @@ function App() {
           <Route
             path="/about"
             element={<About />}
+          />
+            <Route
+            path="/guestbook"
+            element={<GuestBook />}
           />
         </Routes>
       </div>

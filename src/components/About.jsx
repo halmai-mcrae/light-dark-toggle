@@ -8,6 +8,9 @@ const About = () => {
       <div className="col-md-12">
         <h1 className="text-center">About</h1>
         <div>
+          <p>
+          A full-stack developer is a programmer that understands, designs, and codes every aspect of a program, from the user interface to the server.
+          </p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, 
       magna in bibendum malesuada, risus massa bibendum dolor, id congue 
       ipsum risus non risus. Sed in nisl malesuada, rutrum nulla id, 
