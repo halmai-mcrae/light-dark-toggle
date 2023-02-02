@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { SunFill, MoonStarsFill } from 'react-bootstrap-icons'
+import Templates from './components/Templates'
+import Snippets from './components/Snippets'
 import GuestBook from './components/GuestBook'
 import About from './components/About'
 import Home from './components/Home'
@@ -122,6 +124,14 @@ function App() {
             <Route
             path="/guestbook"
             element={<GuestBook />}
+          />
+          <Route
+            path="/snippets"
+            element={<Snippets />}
+          />
+          <Route
+            path="/templates"
+            element={<Templates />}
           />
         </Routes>
       </div>

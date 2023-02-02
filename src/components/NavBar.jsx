@@ -41,7 +41,7 @@ const NavBar = () => {
       <Link to="/"> <button
             type="button"
             className="btn btn-outline-secondary"
-            style = {{margin: '10px'}}
+            style = {{margin: '5px'}}
           >
             Home
           </button>
@@ -50,16 +50,34 @@ const NavBar = () => {
       <button
             type="button"
             className="btn btn-outline-secondary"
-            style = {{margin: '10px'}}
+            style = {{margin: '5px'}}
           >
             About
+          </button>
+      </Link>
+      <Link to="/templates">
+      <button
+            type="button"
+            className="btn btn-outline-secondary"
+            style = {{margin: '5px'}}
+          >
+            Templates
+          </button>
+      </Link>
+      <Link to="/snippets">
+      <button
+            type="button"
+            className="btn btn-outline-secondary"
+            style = {{margin: '5px'}}
+          >
+            Snippets
           </button>
       </Link>
       <Link to="/guestbook">
       <button
             type="button"
             className="btn btn-outline-secondary"
-            style = {{margin: '10px'}}
+            style = {{margin: '5px'}}
           >
             Guestbook
           </button>
