@@ -18,7 +18,7 @@ const GuestBook = () => {
   };
 
   return (
-    <div className="guestbook">
+    <div className="guestbook">   
     <h1>Sign the Guestbook</h1>
       <p>Leave a comment below. It could be anything – appreciation, information, wisdom, or even humor. Surprise me!</p>
       <form onSubmit={handleSubmit} className="form-group">
