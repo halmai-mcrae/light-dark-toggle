@@ -1,105 +1,62 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState, useRef } from 'react'
+import { Link } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
+
+// Icons 
+import logolb  from '../logos/logolb.svg'
+
+// Styles
 import './NavBar.css'
 
-const SearchContext = React.createContext({
-  searchValue: '',
-  setSearchValue: () => {},
-  searchResults: [],
-  setSearchResults: () => {}
-});
-
-function useSearchBar() {
-const [searchValue, setSearchValue] = useState('')
-const [searchResults, setSearchResults] = useState([])
-const blogPosts = [
-  {title: 'Post 1', content: 'Content 1'},
-  {title: 'Post 2', content: 'Content 2'},
-  {title: 'Post 3', content: 'Content 3'},
-  {title: 'Post 4', content: 'Content 4'},
-  {title: 'Post 5', content: 'Content 5'}
-]
-
-useEffect(() => {
-  const results = blogPosts.filter(post => post.title.toLowerCase().includes(searchValue.toLowerCase()))
-  setSearchResults(results)
-}, [searchValue])
-
-return { searchValue, setSearchValue, searchResults, setSearchResults }
-}
-
-export { SearchContext, useSearchBar };
 
 const NavBar = () => {
-  const search = useSearchBar()
+  const [expanded, setExpanded] = useState(false);
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setExpanded(false);
+      }
+    };
+
+    document.addEventListener('click', handleDocumentClick);
+
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
 
   return (
-    <SearchContext.Provider value={search}>
-    <nav className="navbar">
-      <div className="btn-group" role="group" aria-label="Basic example">
-      <Link to="/"> <button
-            type="button"
-            className="btn btn-outline-secondary"
-            style = {{margin: '5px'}}
-          >
+    <Navbar ref={navbarRef} className="navbar" expand="lg" expanded={expanded}>
+      <Navbar.Brand className="content" bg="transparent" href="/">
+        <img src={logolb} className="lb-logo" alt="logo" />
+      </Navbar.Brand>
+      <Navbar.Toggle
+        aria-controls="basic-navbar-nav"
+        className="ml-auto"
+        onClick={() => setExpanded(expanded ? false : "expanded")}
+      />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Link to="/" className="nav-link">
             Home
-          </button>
           </Link>
-      <Link to="/about">
-      <button
-            type="button"
-            className="btn btn-outline-secondary"
-            style = {{margin: '5px'}}
-          >
+          <Link to="/about" className="nav-link">
             About
-          </button>
-      </Link>
-      <Link to="/templates">
-      <button
-            type="button"
-            className="btn btn-outline-secondary"
-            style = {{margin: '5px'}}
-          >
+          </Link>
+          <Link to="/templates" className="nav-link">
             Templates
-          </button>
-      </Link>
-      <Link to="/snippets">
-      <button
-            type="button"
-            className="btn btn-outline-secondary"
-            style = {{margin: '5px'}}
-          >
+          </Link>
+          <Link to="/snippets" className="nav-link">
             Snippets
-          </button>
-      </Link>
-      <Link to="/guestbook">
-      <button
-            type="button"
-            className="btn btn-outline-secondary"
-            style = {{margin: '5px'}}
-          >
+          </Link>
+          <Link to="/guestbook" className="nav-link">
             Guestbook
-          </button>
-      </Link>
-          <span />
-          <span />
-          <span />
-      </div>
-      <form
-      style = {{margin: '10px'}}
-      className="form-inline my-2 my-lg-0">
-        <input 
-          className="form-control mr-sm-2" 
-          type="search" 
-          placeholder="Search" 
-          aria-label="Search" 
-          value={search.searchValue} 
-          onChange={e => search.setSearchValue(e.target.value)}
-        />
-      </form>
-    </nav>
-  </SearchContext.Provider>
+          </Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 

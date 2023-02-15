@@ -9,9 +9,22 @@
 }
 
 .app-header {
-  min-height: 50vh;
+  min-height: 25vh;
   font-size: calc(10px + 2vmin);
 }
+
+@media screen and (max-width: 960px) {
+  .app-header {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .app-header {
+    margin-bottom: 4rem;
+  }
+}
+  
 
 .app-logo, .js-logo, .bs-logo {
   height: 20vmin;
